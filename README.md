@@ -2,6 +2,8 @@
 
 ![Shaku Intro Section Logo](https://shaku.tech/_next/image?url=%2Fhero%2Fhero-slides%2Fbody-measurement.png&w=640&q=75)
 
+<img src="[https://shaku.tech/assets/images/shaku-intro-logo.png](https://shaku.tech/_next/image?url=%2Fhero%2Fhero-slides%2Fbody-measurement.png&w=640&q=75)" width="200" alt="Shaku Intro Section Logo">
+
 ## Overview
 
 Shaku is an AI-powered platform designed to transform the fashion industry by providing precise body measurements, advanced clothing recommendations, and efficient product analysis. It aims to reduce return rates, enhance product visibility, and streamline operations for online shops and clothing brands, converting browsers into satisfied buyers and boosting sales.
