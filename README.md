@@ -26,11 +26,11 @@ Shaku is an AI-powered platform designed to transform the fashion industry by pr
 
 - **API Integration**  
   Seamlessly integrate Shaku’s API into your website for customizable, flexible, and fast functionality tailored to your business needs.  
-  ![API Integration](https://shaku.tech/assets/images/api-integration.png)
+  ![API Integration](https://shaku.tech/_next/image?url=%2Fintegration%2FConnect-Via-API.png&w=640&q=100)
 
 - **SDK Integration**  
   Quickly embed Shaku’s SDK into your site with minimal setup, delivering fast and accurate results out of the box.  
-  ![SDK Integration](https://shaku.tech/assets/images/sdk-integration.png)
+  ![SDK Integration](https://shaku.tech/_next/image?url=%2Fintegration%2FUtilize-SDK%27s-Capabilities.png&w=640&q=100)
 
 ## Pricing
 
