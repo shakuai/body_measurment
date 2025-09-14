@@ -1,8 +1,6 @@
 # Shaku
 
-![Shaku Intro Section Logo](https://shaku.tech/_next/image?url=%2Fhero%2Fhero-slides%2Fbody-measurement.png&w=640&q=75)
-
-<img src="https://shaku.tech/_next/image?url=%2Fhero%2Fhero-slides%2Fbody-measurement.png&w=640&q=75" width="200" alt="Shaku Intro Section Logo">
+<img src="https://shaku.tech/_next/image?url=%2Fhero%2Fhero-slides%2Fbody-measurement.png&w=640&q=75" width="500" alt="Shaku Intro Section Logo">
 
 ## Overview
 
