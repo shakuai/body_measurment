@@ -1,6 +1,6 @@
 # Shaku
 
-![Shaku Intro Section Logo](https://shaku.tech/_next/image?url=%2Flogo%2Fnew-logo.png&w=96&q=75)
+![Shaku Intro Section Logo](https://shaku.tech/_next/image?url=%2Fhero%2Fhero-slides%2Fbody-measurement.png&w=640&q=75)
 
 ## Overview
 
