@@ -49,7 +49,7 @@ Below are example HTTP requests for Python, PHP, and Node.js that you can also t
       payload = json.dumps({
         "grant_type": "password",
         "client_id": "YOUR_CLIENT_ID",
-        "client_secret": "YOUR_Secret_Key",
+        "client_secret": "YOUR_SECRET_KEY",
         "username": "YOUR_EMAIL_ADDRESS",
         "password": "YOUR_PASSWORD"
       })
@@ -66,36 +66,36 @@ Below are example HTTP requests for Python, PHP, and Node.js that you can also t
 
    - **PHP**
       ```php
-<?php
-
-$curl = curl_init();
-
-curl_setopt_array($curl, array(
-  CURLOPT_URL => 'https://api.shaku.tech/oauth/token',
-  CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_ENCODING => '',
-  CURLOPT_MAXREDIRS => 10,
-  CURLOPT_TIMEOUT => 0,
-  CURLOPT_FOLLOWLOCATION => true,
-  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-  CURLOPT_CUSTOMREQUEST => 'POST',
-  CURLOPT_POSTFIELDS =>'{
-    "grant_type":"password",
-    "client_id":"5",
-    "client_secret":"NroznofBcPakYEsD2C1yfcPdfRms1rLx59hqrolD",
-    "username":"abbas.habibnejad.j@gmail.com",
-    "password":"thqNCWFg2CzQjkF"
-}',
-  CURLOPT_HTTPHEADER => array(
-    'Content-Type: application/json',
-    'Accept: application/json'
-  ),
-));
-
-$response = curl_exec($curl);
-
-curl_close($curl);
-echo $response;
+      <?php
+      
+      $curl = curl_init();
+      
+      curl_setopt_array($curl, array(
+        CURLOPT_URL => 'https://api.shaku.tech/oauth/token',
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => '',
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 0,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => 'POST',
+        CURLOPT_POSTFIELDS =>'{
+          "grant_type":"password",
+          "client_id":"YOUR_CLIENT_ID",
+          "client_secret":"YOUR_SECRET_KEY",
+          "username":"YOUR_EMAIL_ADDRESS",
+          "password":"YOUR_PASSWORD"
+      }',
+        CURLOPT_HTTPHEADER => array(
+          'Content-Type: application/json',
+          'Accept: application/json'
+        ),
+      ));
+      
+      $response = curl_exec($curl);
+      
+      curl_close($curl);
+      echo $response;
 
       
       ```
