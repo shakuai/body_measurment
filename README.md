@@ -39,6 +39,8 @@ Below are example HTTP requests for Python, PHP, and Node.js that you can also t
 #### 1.1. Authentication (API Tokens)
  - **Get Access Token**
    
+   Use this endpoint to log in with client ID, client secret, username, and password to receive an access token.
+   
    - **Python**
       ```python
       import requests
@@ -97,8 +99,273 @@ Below are example HTTP requests for Python, PHP, and Node.js that you can also t
       curl_close($curl);
       echo $response;
 
+      ```
+   - **Node.Js**
+      ```javascript
+      var request = require('request');
+      var options = {
+        'method': 'POST',
+        'url': 'https://api.shaku.tech/oauth/token',
+        'headers': {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          "grant_type": "password",
+          "client_id": "YOUR_CLIENT_ID",
+          "client_secret": "YOUR_SECRET_KEY",
+          "username": "YOUR_EMAIL_ADDRESS",
+          "password": "YOUR_PASSWORD"
+        })
+      
+      };
+      request(options, function (error, response) {
+        if (error) throw new Error(error);
+        console.log(response.body);
+      });
+
+      ```
+  - **Refresh Token**
+    
+    Refresh the access token when it expires.
+     
+    - **Python**
+      ```python
+      import requests
+      import json
+      
+      url = "https://api.shaku.tech/oauth/token"
+      
+      payload = json.dumps({
+        "grant_type": "refresh_token",
+        "refresh_token": "YOUR_REFRESH_TOKEN",
+        "client_id": "YOUR_CLIENT_ID",
+        "client_secret": "YOUR_SECRET_KEY"
+      })
+      headers = {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Cookie': 'shaku_session=N3tqPfDYa4oCHa1YBkWLIfHoiuJ7LvuRIZZ0Kbna'
+      }
+      
+      response = requests.request("POST", url, headers=headers, data=payload)
+      
+      print(response.text)
       
       ```
+
+    - **PHP**
+      ```php
+      <?php
+      
+      $curl = curl_init();
+      
+      curl_setopt_array($curl, array(
+        CURLOPT_URL => 'https://api.shaku.tech/oauth/token',
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => '',
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 0,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => 'POST',
+        CURLOPT_POSTFIELDS =>'{
+          "grant_type":"refresh_token",
+          "refresh_token":"YOUR_REFRESH_TOKEN",
+          "client_id":"YOUR_CLIENT_ID",
+          "client_secret":"YOUR_SECRET_KEY"
+      }',
+        CURLOPT_HTTPHEADER => array(
+          'Content-Type: application/json',
+          'Accept: application/json',
+          'Cookie: shaku_session=N3tqPfDYa4oCHa1YBkWLIfHoiuJ7LvuRIZZ0Kbna'
+        ),
+      ));
+      
+      $response = curl_exec($curl);
+      
+      curl_close($curl);
+      echo $response;
+
+
+      ```
+    - **Node.Js**
+      ```javascript
+      var request = require('request');
+      var options = {
+        'method': 'POST',
+        'url': 'https://api.shaku.tech/oauth/token',
+        'headers': {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+          'Cookie': 'shaku_session=N3tqPfDYa4oCHa1YBkWLIfHoiuJ7LvuRIZZ0Kbna'
+        },
+        body: JSON.stringify({
+          "grant_type": "refresh_token",
+          "refresh_token": "YOUR_REFRESH_TOKEN",
+          "client_id": "YOUR_CLIENT_ID",
+          "client_secret": "YOUR_SECRET_KEY"
+        })
+      
+      };
+      request(options, function (error, response) {
+        if (error) throw new Error(error);
+        console.log(response.body);
+
+      ```
+
+   - **Revoke Token**
+    
+     Revoke an access token to log out or terminate access.
+     
+     - **Python**
+       ```python
+       import requests
+       
+       url = "https://api.shaku.tech/api/v1/auth/revoke"
+       
+       payload = ""
+       headers = {
+         'Authorization': 'Bearer YOUR_ACCESS_TOKEN',
+         'Cookie': 'shaku_session=oQhS4k3h5QBHs77YoGVKhEwsWmtu8E48lr4sTimt'
+       }
+       
+       response = requests.request("GET", url, headers=headers, data=payload)
+       
+       print(response.text)
+            
+       ```
+
+     - **PHP**
+       ```php
+       <?php
+       
+       $curl = curl_init();
+       
+       curl_setopt_array($curl, array(
+         CURLOPT_URL => 'https://api.shaku.tech/api/v1/auth/revoke',
+         CURLOPT_RETURNTRANSFER => true,
+         CURLOPT_ENCODING => '',
+         CURLOPT_MAXREDIRS => 10,
+         CURLOPT_TIMEOUT => 0,
+         CURLOPT_FOLLOWLOCATION => true,
+         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+         CURLOPT_CUSTOMREQUEST => 'GET',
+         CURLOPT_HTTPHEADER => array(
+           'Authorization: Bearer YOUR_ACCESS_TOKEN'
+         ),
+       ));
+       
+       $response = curl_exec($curl);
+       
+       curl_close($curl);
+       echo $response;
+ 
+ 
+       ```
+     - **Node.Js**
+       ```javascript
+       var request = require('request');
+       var options = {
+         'method': 'GET',
+         'url': 'https://api.shaku.tech/api/v1/auth/revoke',
+         'headers': {
+           'Authorization': 'Bearer YOUR_ACCESS_TOKEN'
+         }
+       };
+       request(options, function (error, response) {
+         if (error) throw new Error(error);
+         console.log(response.body);
+       });
+       ```
+
+#### 1.2. API Services
+ - **Size Measurement**
+ 
+   Measure a person’s body from two images (full-view and side-view). This service returns detailed measurements like Chest, Waist, Hips, Shoulder, Neck, and more.
+  
+    - **Python**
+      ```python
+       import requests
+       import json
+       
+       url = "https://api.shaku.tech/api/v1/services/sizeMeasurement"
+       
+       payload = json.dumps({
+         "present_height": "YOUR_HEIGHT",
+         "img_full_view_body": "IMAGE_BASE64_FORMAT",
+         "img_side_view_body": "IMAGE_BASE64_FORMAT",
+     
+       })
+       headers = {
+         'Authorization': 'Bearer YOUR_ACCESS_TOKEN',
+         'Content-Type': 'application/json',
+         'Cookie': 'shaku_session=N3tqPfDYa4oCHa1YBkWLIfHoiuJ7LvuRIZZ0Kbna'
+       }
+       
+       response = requests.request("POST", url, headers=headers, data=payload)
+       
+       print(response.text)
+           
+      ```
+      
+     - **PHP**
+       ```php
+       <?php
+       
+       $curl = curl_init();
+       
+       curl_setopt_array($curl, array(
+         CURLOPT_URL => 'https://api.shaku.tech/api/v1/services/sizeMeasurement',
+         CURLOPT_RETURNTRANSFER => true,
+         CURLOPT_ENCODING => '',
+         CURLOPT_MAXREDIRS => 10,
+         CURLOPT_TIMEOUT => 0,
+         CURLOPT_FOLLOWLOCATION => true,
+         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+         CURLOPT_CUSTOMREQUEST => 'POST',
+         CURLOPT_POSTFIELDS =>'{
+           "present_height":"YOUR_HEIGHT",
+           "img_full_view_body":"IMAGE_BASE64_FORMAT",
+           "img_side_view_body":"IMAGE_BASE64_FORMAT"
+       }',
+         CURLOPT_HTTPHEADER => array(
+           'Authorization: Bearer YOUR_ACCESS_TOKEN',
+           'Content-Type: application/json',
+           'Cookie: shaku_session=N3tqPfDYa4oCHa1YBkWLIfHoiuJ7LvuRIZZ0Kbna'
+         ),
+       ));
+       
+       $response = curl_exec($curl);
+       
+       curl_close($curl);
+       echo $response;
+ 
+ 
+       ```
+      - **Node.Js**
+        ```javascript
+        var request = require('request');
+        var options = {
+          'method': 'POST',
+          'url': 'https://api.shaku.tech/api/v1/services/sizeMeasurement',
+          'headers': {
+            'Authorization': 'Bearer '
+          },
+          body: JSON.stringify({
+            "present_height": "",
+            "img_full_view_body": "",
+            "img_side_view_body": ""
+          })
+        
+        };
+        request(options, function (error, response) {
+          if (error) throw new Error(error);
+          console.log(response.body);
+        });
+ 
+        ```
+
 
 - **SDK Integration**  
   Quickly embed Shaku’s SDK into your site with minimal setup, delivering fast and accurate results out of the box.
