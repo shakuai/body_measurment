@@ -365,11 +365,111 @@ Below are example HTTP requests for Python, PHP, and Node.js that you can also t
         });
  
         ```
-
+ - **Clothes Recognition**
+ 
+   Recognize clothing from an image and return type, size, and other relevant features.
+  
+    - **Python**
+      ```python
+      import requests
+      import json
+      
+      url = "https://api.shaku.tech/api/v1/services/autoTagging"
+      
+      payload = json.dumps({
+        "image": "IMAGE_BASE64_FORMAT"
+      })
+      headers = {
+        'Authorization': 'Bearer YOUR_ACCESS_TOKEN'
+      }
+      
+      response = requests.request("POST", url, headers=headers, data=payload)
+      
+      print(response.text)
+           
+      ```
+      
+     - **PHP**
+       ```php
+       <?php
+       
+       $curl = curl_init();
+       
+       curl_setopt_array($curl, array(
+         CURLOPT_URL => 'https://api.shaku.tech/api/v1/services/autoTagging',
+         CURLOPT_RETURNTRANSFER => true,
+         CURLOPT_ENCODING => '',
+         CURLOPT_MAXREDIRS => 10,
+         CURLOPT_TIMEOUT => 0,
+         CURLOPT_FOLLOWLOCATION => true,
+         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+         CURLOPT_CUSTOMREQUEST => 'POST',
+         CURLOPT_POSTFIELDS =>'{
+           "image":"IMAGE_BASE64_FORMAT"
+       }',
+         CURLOPT_HTTPHEADER => array(
+           'Authorization: Bearer YOUR_ACCESS_TOKEN'
+         ),
+       ));
+       
+       $response = curl_exec($curl);
+       
+       curl_close($curl);
+       echo $response;
+ 
+ 
+       ```
+      - **Node.Js**
+        ```javascript
+        var request = require('request');
+        var options = {
+          'method': 'POST',
+          'url': 'https://api.shaku.tech/api/v1/services/autoTagging',
+          'headers': {
+            'Authorization': 'Bearer YOUR_ACCESS_TOKEN'
+          },
+          body: JSON.stringify({
+            "image": "IMAGE_BASE64_FORMAT"
+          })
+        
+        };
+        request(options, function (error, response) {
+          if (error) throw new Error(error);
+          console.log(response.body);
+ 
+        ```
 
 - **SDK Integration**  
-  Quickly embed Shaku’s SDK into your site with minimal setup, delivering fast and accurate results out of the box.
-  
+  For simpler and faster integration, you can test directly on the Dashboard or use the Python package.
+  - [Shaku Dashboard - Login & Test](https://dashboard.shaku.tech/auth/login)
+  - Install via PyPI:
+    ```python
+    pip install shakuapi
+    ```
+    
+    Python Example:
+
+    ```python
+    from shakuapi import ShakuClient
+
+    client = ShakuClient(client_id="YOUR_CLIENT_ID", client_secret="YOUR_CLIENT_SECRET")
+    
+    # login
+    client.login(username="YOUR_USERNAME", password="YOUR_PASSWORD")
+    
+    # get size measurement
+    result = client.size_measurement(
+        present_height=YOUR_HEIGHT,
+        img_full_view_body="full_view.jpg",
+        img_side_view_body="side_view.jpg"
+    )
+    
+    # clothes recognition
+    clothes = client.clothes_recognition("clothes_image.jpg")
+    print(result)
+    print(clothes)
+
+    ```
 
 
 ## Pricing
