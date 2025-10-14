@@ -20,7 +20,7 @@ This platform delivers a complete AI-driven solution for accurate body measureme
 
 1. **Input**: Users upload **front and side images**. Images should be clear, full-body, and well-lit.
 2. **Processing**: AI detects body keypoints and calculates measurements based on anthropometric ratios and image coordinates.
-3. **Output**: Returns a JSON containing numeric measurements in **centimeters** and detailed **coordinates** for each body part.
+3. **Output**: Returns a JSON containing numeric measurements in **centimeters** and **inches** for each body part.
 4. **Error Handling**: Validates image quality and ensures accurate measurement calculations. Returning a descriptive error if images are unsuitable.
 
 
