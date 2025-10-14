@@ -279,165 +279,93 @@ Below are example HTTP requests for Python, PHP, and Node.js that you can also t
        });
        ```
 
-#### 1.2. API Services
- - **Size Measurement**
+#### 1.2. Body Measurement API Service
+
  
-   Measure a person’s body from two images (full-view and side-view). This service returns detailed measurements like Chest, Waist, Hips, Shoulder, Neck, and more.
-  
-    - **Python**
-      ```python
-       import requests
-       import json
-       
-       url = "https://api.shaku.tech/api/v1/services/sizeMeasurement"
-       
-       payload = json.dumps({
-         "present_height": "YOUR_HEIGHT",
-         "img_full_view_body": "IMAGE_BASE64_FORMAT",
-         "img_side_view_body": "IMAGE_BASE64_FORMAT",
-     
-       })
-       headers = {
-         'Authorization': 'Bearer YOUR_ACCESS_TOKEN',
-         'Content-Type': 'application/json',
-         'Cookie': 'shaku_session=N3tqPfDYa4oCHa1YBkWLIfHoiuJ7LvuRIZZ0Kbna'
-       }
-       
-       response = requests.request("POST", url, headers=headers, data=payload)
-       
-       print(response.text)
-           
-      ```
-      
-     - **PHP**
-       ```php
-       <?php
-       
-       $curl = curl_init();
-       
-       curl_setopt_array($curl, array(
-         CURLOPT_URL => 'https://api.shaku.tech/api/v1/services/sizeMeasurement',
-         CURLOPT_RETURNTRANSFER => true,
-         CURLOPT_ENCODING => '',
-         CURLOPT_MAXREDIRS => 10,
-         CURLOPT_TIMEOUT => 0,
-         CURLOPT_FOLLOWLOCATION => true,
-         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-         CURLOPT_CUSTOMREQUEST => 'POST',
-         CURLOPT_POSTFIELDS =>'{
-           "present_height":"YOUR_HEIGHT",
-           "img_full_view_body":"IMAGE_BASE64_FORMAT",
-           "img_side_view_body":"IMAGE_BASE64_FORMAT"
-       }',
-         CURLOPT_HTTPHEADER => array(
-           'Authorization: Bearer YOUR_ACCESS_TOKEN',
-           'Content-Type: application/json',
-           'Cookie: shaku_session=N3tqPfDYa4oCHa1YBkWLIfHoiuJ7LvuRIZZ0Kbna'
-         ),
-       ));
-       
-       $response = curl_exec($curl);
-       
-       curl_close($curl);
-       echo $response;
+  Measure a person’s body from two images (full-view and side-view). This service returns detailed measurements like Chest, Waist, Hips, Shoulder, Neck, and more.
  
- 
-       ```
-      - **Node.Js**
-        ```javascript
-        var request = require('request');
-        var options = {
-          'method': 'POST',
-          'url': 'https://api.shaku.tech/api/v1/services/sizeMeasurement',
-          'headers': {
-            'Authorization': 'Bearer '
-          },
-          body: JSON.stringify({
-            "present_height": "",
-            "img_full_view_body": "",
-            "img_side_view_body": ""
-          })
-        
-        };
-        request(options, function (error, response) {
-          if (error) throw new Error(error);
-          console.log(response.body);
-        });
- 
-        ```
- - **Clothes Recognition**
- 
-   Recognize clothing from an image and return type, size, and other relevant features.
-  
-    - **Python**
-      ```python
+   - **Python**
+     ```python
       import requests
       import json
       
-      url = "https://api.shaku.tech/api/v1/services/autoTagging"
+      url = "https://api.shaku.tech/api/v1/services/sizeMeasurement"
       
       payload = json.dumps({
-        "image": "IMAGE_BASE64_FORMAT"
+        "present_height": "YOUR_HEIGHT",
+        "img_full_view_body": "IMAGE_BASE64_FORMAT",
+        "img_side_view_body": "IMAGE_BASE64_FORMAT",
+    
       })
       headers = {
-        'Authorization': 'Bearer YOUR_ACCESS_TOKEN'
+        'Authorization': 'Bearer YOUR_ACCESS_TOKEN',
+        'Content-Type': 'application/json',
+        'Cookie': 'shaku_session=N3tqPfDYa4oCHa1YBkWLIfHoiuJ7LvuRIZZ0Kbna'
       }
       
       response = requests.request("POST", url, headers=headers, data=payload)
       
       print(response.text)
-           
-      ```
+          
+     ```
+
+- **PHP**
+  
+  ```php
+      <?php
       
-     - **PHP**
-       ```php
-       <?php
+      $curl = curl_init();
+      
+      curl_setopt_array($curl, array(
+        CURLOPT_URL => 'https://api.shaku.tech/api/v1/services/sizeMeasurement',
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => '',
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 0,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => 'POST',
+        CURLOPT_POSTFIELDS =>'{
+          "present_height":"YOUR_HEIGHT",
+          "img_full_view_body":"IMAGE_BASE64_FORMAT",
+          "img_side_view_body":"IMAGE_BASE64_FORMAT"
+      }',
+        CURLOPT_HTTPHEADER => array(
+          'Authorization: Bearer YOUR_ACCESS_TOKEN',
+          'Content-Type: application/json',
+          'Cookie: shaku_session=N3tqPfDYa4oCHa1YBkWLIfHoiuJ7LvuRIZZ0Kbna'
+        ),
+      ));
+      
+      $response = curl_exec($curl);
+      
+      curl_close($curl);
+      echo $response;
+
+
+  ```
+- **Node.Js**
+    ```javascript
+       var request = require('request');
+       var options = {
+         'method': 'POST',
+         'url': 'https://api.shaku.tech/api/v1/services/sizeMeasurement',
+         'headers': {
+           'Authorization': 'Bearer '
+         },
+         body: JSON.stringify({
+           "present_height": "",
+           "img_full_view_body": "",
+           "img_side_view_body": ""
+         })
        
-       $curl = curl_init();
-       
-       curl_setopt_array($curl, array(
-         CURLOPT_URL => 'https://api.shaku.tech/api/v1/services/autoTagging',
-         CURLOPT_RETURNTRANSFER => true,
-         CURLOPT_ENCODING => '',
-         CURLOPT_MAXREDIRS => 10,
-         CURLOPT_TIMEOUT => 0,
-         CURLOPT_FOLLOWLOCATION => true,
-         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-         CURLOPT_CUSTOMREQUEST => 'POST',
-         CURLOPT_POSTFIELDS =>'{
-           "image":"IMAGE_BASE64_FORMAT"
-       }',
-         CURLOPT_HTTPHEADER => array(
-           'Authorization: Bearer YOUR_ACCESS_TOKEN'
-         ),
-       ));
-       
-       $response = curl_exec($curl);
-       
-       curl_close($curl);
-       echo $response;
- 
- 
-       ```
-      - **Node.Js**
-        ```javascript
-        var request = require('request');
-        var options = {
-          'method': 'POST',
-          'url': 'https://api.shaku.tech/api/v1/services/autoTagging',
-          'headers': {
-            'Authorization': 'Bearer YOUR_ACCESS_TOKEN'
-          },
-          body: JSON.stringify({
-            "image": "IMAGE_BASE64_FORMAT"
-          })
-        
-        };
-        request(options, function (error, response) {
-          if (error) throw new Error(error);
-          console.log(response.body);
- 
-        ```
+       };
+       request(options, function (error, response) {
+         if (error) throw new Error(error);
+         console.log(response.body);
+       });
+
+    ```
 
 - **SDK Integration**
   
