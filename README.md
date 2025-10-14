@@ -410,8 +410,7 @@ Shaku also offers a mobile application that brings AI-powered body measurement t
 
 ## Privacy & Data Handling
 
-- All communication is via HTTPS (TLS 1.2+).
-- Uploaded images are processed and deleted immediately after inference unless otherwise configured.
+- Uploaded images are processed and deleted immediately after inference.
 - No personal data is stored or shared.
 
 
