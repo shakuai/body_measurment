@@ -465,10 +465,7 @@ Below are example HTTP requests for Python, PHP, and Node.js that you can also t
         img_side_view_body="side_view.jpg"
     )
     
-    # clothes recognition
-    clothes = client.clothes_recognition("clothes_image.jpg")
     print(result)
-    print(clothes)
 
     ```
 
