@@ -6,7 +6,7 @@ Shaku is designed to revolutionize online fashion and clothing shopping by provi
 
 ---
 
-<img src="https://shaku.tech/_next/image?url=%2Fhero%2Fhero-slides%2Fbody-measurement.png&w=640&q=75" width="500" alt="Shaku Intro Section Logo">
+<img width="1181" height="1315" alt="Add da subheading" src="https://github.com/user-attachments/assets/a808dc37-d607-4978-9653-767a94770861" />
 
 ## Overview
 
