@@ -400,7 +400,7 @@ Below are example HTTP requests for Python, PHP, and Node.js that you can also t
 
 ## Pricing
 
-Shaku offers a cost-effective and scalable solution that provides maximum features for online fashion and apparel businesses. By reducing return rates and improving customer satisfaction, Shaku helps businesses increase revenue and optimize operations. Pricing plans are designed to accommodate small shops to large enterprises, ensuring that every business can benefit from AI-powered body measurement technology. For detailed pricing, subscription plans, and enterprise solutions, visit Shaku Pricing
+Shaku offers a cost-effective and scalable solution that provides maximum features for online fashion and apparel businesses. By reducing return rates and improving customer satisfaction, Shaku helps businesses increase revenue and optimize operations. Pricing plans are designed to accommodate small shops to large enterprises, ensuring that every business can benefit from AI-powered body measurement technology. For detailed pricing, subscription plans, and enterprise solutions, visit [Shaku Pricing](https://shaku.tech/#pricing)
 
 ## Application
 
@@ -409,4 +409,10 @@ Shaku also offers a mobile application that brings AI-powered body measurement t
 
 ---
 
-*For more information, visit [Shaku.tech](https://shaku.tech).*
+## Privacy & Data Handling
+
+- All communication is via HTTPS (TLS 1.2+).
+- Uploaded images are processed and deleted immediately after inference unless otherwise configured.
+- No personal data is stored or shared.
+
+
