@@ -417,7 +417,6 @@ Shaku also offers a mobile application that brings AI-powered body measurement t
 ## Resources
 
 - Official website: [Shaku.tech](https://shaku.tech)
-- GitHub Repository: https://github.com/shakuai/body_measurment
 - Documentation: [[API Reference]](https://api.shaku.tech/docs.html)
 
 
