@@ -407,7 +407,6 @@ Shaku offers a cost-effective and scalable solution that provides maximum featur
 Shaku also offers a mobile application that brings AI-powered body measurement tools directly to users’ smartphones. The app allows users to capture their front and side images, receive instant measurements, and track changes over time. This mobile accessibility ensures that users can benefit from accurate body measurements anytime and anywhere, enhancing convenience and engagement. The app can also serve as a complement to your e-commerce platform, providing users with on-the-go insights that improve confidence in their clothing choices.
 
 
----
 
 ## Privacy & Data Handling
 
@@ -415,4 +414,15 @@ Shaku also offers a mobile application that brings AI-powered body measurement t
 - Uploaded images are processed and deleted immediately after inference unless otherwise configured.
 - No personal data is stored or shared.
 
+
+## Resources
+
+- Official website: [Shaku.tech](https://shaku.tech)
+- GitHub Repository: https://github.com/shakuai/body_measurment
+- Documentation: [[API Reference]](https://api.shaku.tech/docs.html)
+
+
+## License
+
+MIT License © 2025 ShakuAI
 
