@@ -144,7 +144,7 @@ Below are example HTTP requests for Python, PHP, and Node.js that you can also t
       })
       headers = {
         'Content-Type': 'application/json',
-        'Accept': 'application/json',
+        'Accept': 'application/json'
       }
       
       response = requests.request("POST", url, headers=headers, data=payload)
@@ -176,7 +176,7 @@ Below are example HTTP requests for Python, PHP, and Node.js that you can also t
       }',
         CURLOPT_HTTPHEADER => array(
           'Content-Type: application/json',
-          'Accept: application/json',
+          'Accept: application/json'
         ),
       ));
       
@@ -295,7 +295,7 @@ Below are example HTTP requests for Python, PHP, and Node.js that you can also t
       })
       headers = {
         'Authorization': 'Bearer YOUR_ACCESS_TOKEN',
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json'
       }
       
       response = requests.request("POST", url, headers=headers, data=payload)
@@ -327,7 +327,7 @@ Below are example HTTP requests for Python, PHP, and Node.js that you can also t
       }',
         CURLOPT_HTTPHEADER => array(
           'Authorization: Bearer YOUR_ACCESS_TOKEN',
-          'Content-Type: application/json',
+          'Content-Type: application/json'
         ),
       ));
       
